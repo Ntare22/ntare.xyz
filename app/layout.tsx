@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import { ApolloProvider } from "@apollo/client";
-import client from "./lib/apolloClient";
+import Navbar from "./components/sections/Navbar";
+import ApolloProviderWrapper from "./lib/apolloClient";
 
 export const metadata: Metadata = {
   title: "Jim Ntare",
@@ -17,10 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ApolloProvider client={client}>
+        <ApolloProviderWrapper>
           <Navbar />
           {children}
-        </ApolloProvider>
+        </ApolloProviderWrapper>
       </body>
     </html>
   );

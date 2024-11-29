@@ -21,11 +21,11 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="flex items-baseline w-full justify-between items-center px-5 py-3 lg:px-24">
+      <div className="flex w-full justify-between items-center px-5 py-4 lg:px-24 lg:py-5">
         <Link href="/" className={`${bebas.className} text-3xl`}>Jim Ntare</Link>
         {/* Hamburger Button */}
         <div
-          className="lg:hidden absolute right-4"
+          className="absolute right-4 top-3 lg:hidden "
           onClick={() => setIsOpen(!isOpen)}
         >
           {/* Hamburger Icon */}
@@ -45,7 +45,19 @@ export default function Navbar() {
       <div className="w-full">
         {
           isOpen && (
-            <div className={`${manrope.className} absolute w-full text-center text-2xl flex flex-col bg-black`}>
+            <div
+              className={`
+                ${manrope.className} 
+                absolute 
+                w-full 
+                text-center 
+                text-2xl 
+                flex 
+                flex-col 
+                justify-evenly 
+                justify-center 
+                bg-black 
+                h-2/3`}>
               <Link href="#projects" className="py-2" onClick={() => setIsOpen(false)}>Work</Link>
               <Link href="/about" className="py-2" onClick={() => setIsOpen(false)}>About</Link>
               <Link href="#contact" className="py-2" onClick={() => setIsOpen(false)}>Contact</Link>

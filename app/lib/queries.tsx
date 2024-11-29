@@ -35,6 +35,7 @@ export const GET_HOMEPAGE = gql`
             title
             description
             year
+            role
             link {
               id
               link_name

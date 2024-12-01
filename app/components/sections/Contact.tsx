@@ -25,7 +25,7 @@ export default function Contact({
   const gitHub = links.find((link: any) => link.link_name == 'github')
   const xLogo = links.find((link: any) => link.link_name == 'x')
   const insta = links.find((link: any) => link.link_name == 'instagram')
-  console.log('----------', linkedIn)
+
   return (
     <div id="contact" className="flex flex-col lg:flex-row">
       <div className="lg:w-1/2">

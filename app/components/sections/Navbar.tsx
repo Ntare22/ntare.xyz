@@ -38,8 +38,8 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden lg:block lg:w-1/6 lg:flex lg:justify-between">
           <Link href="#projects">Work</Link>
-          <Link href="#projects">About</Link>
-          <Link href="#projects">Contact</Link>
+          <Link href="#about">About</Link>
+          <Link href="#contact">Contact</Link>
         </div>
       </div>
       <div className="w-full">

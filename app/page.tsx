@@ -1,4 +1,5 @@
 "use client"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useQuery } from "@apollo/client";
 import { GET_HOMEPAGE } from "./lib/queries";
 import Loading from "./components/Loading";

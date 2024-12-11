@@ -22,3 +22,9 @@ type HomepageData = {
     content: Section[];
   };
 };
+
+type AboutpageData = {
+  about : {
+    content: Section[];
+  };
+};

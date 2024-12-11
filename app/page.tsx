@@ -9,7 +9,6 @@ import Contact from "./components/sections/Contact";
 
 export default function Home() {
   const { loading, error, data } = useQuery<HomepageData>(GET_HOMEPAGE);
-  console.log(data)
 
   const items = data?.homepage?.content || []
   const hero = items.find((section) => section.section_name == "hero")
@@ -17,7 +16,6 @@ export default function Home() {
   const about = items.find((section) => section.section_name == "about me")
   const contact = items.find((section) => section.section_name == "contact")
 
-  console.log('------', contact)
   return (
     <main className="px-5 lg:px-24">
       {

@@ -37,9 +37,9 @@ export default function Navbar() {
         </div>
         {/* Desktop Menu */}
         <div className="hidden lg:block lg:w-1/6 lg:flex lg:justify-between">
-          <Link href="#projects">Work</Link>
-          <Link href="#about">About</Link>
-          <Link href="#contact">Contact</Link>
+          <Link href="/#projects">Work</Link>
+          <Link href="/about">About</Link>
+          <Link href="/#contact">Contact</Link>
         </div>
       </div>
       <div className="w-full">
@@ -58,9 +58,9 @@ export default function Navbar() {
                 justify-center 
                 bg-black 
                 h-2/3`}>
-              <Link href="#projects" className="py-2" onClick={() => setIsOpen(false)}>Work</Link>
+              <Link href="/#projects" className="py-2" onClick={() => setIsOpen(false)}>Work</Link>
               <Link href="/about" className="py-2" onClick={() => setIsOpen(false)}>About</Link>
-              <Link href="#contact" className="py-2" onClick={() => setIsOpen(false)}>Contact</Link>
+              <Link href="/#contact" className="py-2" onClick={() => setIsOpen(false)}>Contact</Link>
             </div>
           )
         }

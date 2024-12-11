@@ -26,7 +26,7 @@ export default function Home() {
             </div>
           ) : error ? (
             <div className="flex justify-center items-center h-screen">
-              <div>error</div>
+              <div>Experiencing API error, reachout jim.ntare@gmail.com</div>
             </div>
           ) :
             <div>

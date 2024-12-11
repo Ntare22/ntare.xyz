@@ -25,7 +25,7 @@ export default function About() {
             </div>
           ) : error || data?.about == null ? (
             <div className="flex justify-center items-center h-screen">
-              <div>error</div>
+              <div>Website coming soon. Meanwhile, reachout jim.ntare@gmail.com</div>
             </div>
           ) :
             <div>

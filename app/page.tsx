@@ -28,7 +28,7 @@ export default function Home() {
             </div>
           ) : error || data?.homepage == null ? (
             <div className="flex justify-center items-center h-screen">
-              <div>Experiencing API error, reachout jim.ntare@gmail.com</div>
+              <div>Website coming soon. Meanwhile, reachout jim.ntare@gmail.com</div>
             </div>
           ) : 
             <div>

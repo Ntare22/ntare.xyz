@@ -38,12 +38,12 @@ export async function POST(req: Request): Promise<Response> {
         {
           From: {
             Email: process.env.MAILJET_FROM_EMAIL as string,
-            Name: "Your Website",
+            Name: "ntare.xyz",
           },
           To: [
             {
-              Email: process.env.MAILJET_TO_EMAIL as string,
-              Name: "Recipient Name",
+              Email: email,
+              Name: name,
             },
           ],
           Subject: `New message from ${name}`,

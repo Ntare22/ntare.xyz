@@ -53,3 +53,41 @@ export const GET_HOMEPAGE = gql`
     }
   }
 `;
+
+export const GET_ABOUTPAGE = gql`
+  query About {
+    about {
+      content {
+        ... on ComponentSectionsSection {
+          id
+          section_name
+          heading
+          sub_heading
+          description
+          image
+          links {
+            link_name
+            id
+            url
+          }
+          skills {
+            tag_name
+            id
+          }
+        }
+        ... on ComponentExperienceCompanies {
+          id
+          section_name
+          experience {
+            id
+            company
+            role
+            description
+            start_date
+            end_date
+          }
+        }
+      }
+    }
+}
+`;

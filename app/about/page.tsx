@@ -23,7 +23,7 @@ export default function About() {
             <div className="flex justify-center items-center h-screen">
               <Loading />
             </div>
-          ) : error ? (
+          ) : error || data?.about == null ? (
             <div className="flex justify-center items-center h-screen">
               <div>error</div>
             </div>

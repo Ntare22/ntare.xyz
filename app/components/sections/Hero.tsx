@@ -22,29 +22,29 @@ export default function Hero({
   sub_heading,
   links,
 }: any) {
-  const contact = links.find((contact: any) => contact.link_name == "contact")
-  const linkedIn = links.find((linkedin: any) => linkedin.link_name == "linkedin")
-  const gitHub = links.find((github: any) => github.link_name == "github")
+  const contact = links?.find((contact: any) => contact.link_name == "contact")
+  const linkedIn = links?.find((linkedin: any) => linkedin.link_name == "linkedin")
+  const gitHub = links?.find((github: any) => github.link_name == "github")
 
   return (
     <div className="flex flex-col items-center lg:flex-row lg:py-6">
       <div className="lg:w-1/2">
         <div
           className={`${bebas.className} mt-4 py-6 text-6xl w-2/3 lg:text-9xl`}
-          dangerouslySetInnerHTML={{ __html: heading.replace("Jim", "<br/>Jim") }}
+          dangerouslySetInnerHTML={{ __html: heading?.replace("Jim", "<br/>Jim") }}
         />
         <p className={`${manrope.className} font-thin lg:w-2/3`}>{sub_heading}</p>
         <div className="flex mt-4">
-          <Link href={contact.url} className="flex justify-between items-center py-1 px-1 w-1/2 rounded-full bg-[#D3E97A] lg:w-1/3">
+          <Link href={contact?.url} className="flex justify-between items-center py-1 px-1 w-1/2 rounded-full bg-[#D3E97A] lg:w-1/3">
             <div className="uppercase pl-2 font-semibold text-black">contact me</div>
             <div className="bg-black py-2 px-2 rounded-full">
               <Image alt="arrow" src={arrow} className="" />
             </div>
           </Link>
-          <Link href={linkedIn.url} target='_blank' className="bg-[#222222] flex justify-center px-2 py-2 rounded-full mx-2">
+          <Link href={linkedIn?.url} target='_blank' className="bg-[#222222] flex justify-center px-2 py-2 rounded-full mx-2">
             <Image alt="linkedin" src={linkedin} />
           </Link>
-          <Link href={gitHub.url} target='_blank' className="bg-[#222222] flex justify-center px-2 py-2 rounded-full">
+          <Link href={gitHub?.url} target='_blank' className="bg-[#222222] flex justify-center px-2 py-2 rounded-full">
             <Image alt="github" src={github} />
           </Link>
         </div>

@@ -17,6 +17,7 @@ export default function Home() {
   const about = items.find((section) => section.section_name == "about me")
   const contact = items.find((section) => section.section_name == "contact")
 
+
   return (
     <main className="px-5 lg:px-24">
       {
@@ -25,11 +26,11 @@ export default function Home() {
             <div className="flex justify-center items-center h-screen">
               <Loading />
             </div>
-          ) : error ? (
+          ) : error || data?.homepage == null ? (
             <div className="flex justify-center items-center h-screen">
               <div>Experiencing API error, reachout jim.ntare@gmail.com</div>
             </div>
-          ) :
+          ) : 
             <div>
               <Hero {...hero} />
               <hr className="border-t-1 border-[#484848] my-4 lg:my-14" />

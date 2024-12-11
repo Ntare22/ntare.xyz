@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    NEXT_PUBLIC_CMS_BACKEND: 'http://localhost:1337/graphql'
+    NEXT_PUBLIC_CMS_BACKEND: `${process.env.CMS_BACKEND}/graphql`
   },
   images: {
     domains: ['res.cloudinary.com'],

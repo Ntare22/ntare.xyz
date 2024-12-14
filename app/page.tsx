@@ -17,7 +17,6 @@ export default function Home() {
   const about = items.find((section) => section.section_name == "about me")
   const contact = items.find((section) => section.section_name == "contact")
 
-  console.log(data?.homepage)
   return (
     <main className="px-5 lg:px-24">
       {

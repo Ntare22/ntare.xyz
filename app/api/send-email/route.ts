@@ -1,4 +1,6 @@
-import mailjet from "node-mailjet";
+// app/api/send-email/route.ts
+import { NextResponse } from 'next/server';
+import mailjet from 'node-mailjet';
 
 interface ContactFormData {
   name: string;
@@ -10,6 +12,7 @@ interface MailjetResponse {
   body: {
     Messages: {
       Status: string;
+      Errors?: string[];
     }[];
   };
 }
@@ -20,11 +23,15 @@ export async function POST(req: Request): Promise<Response> {
 
     const { name, email, message } = body;
 
+    // Validate form data
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "All fields are required" }), {
-        status: 400,
-      });
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
+
+    // Log API credentials for troubleshooting
+    console.log("Mailjet API Key:", process.env.MAILJET_API_KEY);
+    console.log("Mailjet Secret Key:", process.env.MAILJET_SECRET_KEY);
+    console.log("From Email:", process.env.MAILJET_FROM_EMAIL);
 
     // Initialize Mailjet client
     const mailjetClient = new mailjet({
@@ -50,20 +57,25 @@ export async function POST(req: Request): Promise<Response> {
           TextPart: `Message: ${message}\n\nFrom: ${name} (${email})`,
         },
       ],
-    }) as MailjetResponse; // Cast response to the defined type
+    }) as MailjetResponse;
 
-    // Check response status
+    // Log the full response for troubleshooting
+    console.log('Mailjet response:', request.body);
+
+    // Check if the email was sent successfully
     if (request.body.Messages[0].Status === "success") {
-      return new Response(JSON.stringify({ message: "Email sent successfully!" }), {
-        status: 200,
-      });
+      return NextResponse.json({ message: "Email sent successfully!" }, { status: 200 });
     } else {
-      throw new Error("Failed to send email.");
+      // Log any errors in the response for debugging
+      console.error('Mailjet Error:', request.body.Messages[0].Errors);
+      return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
     }
   } catch (error) {
+    // Log the error details for debugging
     console.error("Mailjet error:", error);
-    return new Response(
-      JSON.stringify({ error: "Error sending email. Try again later." }),
+
+    return NextResponse.json(
+      { error: "Error sending email. Try again later." },
       { status: 500 }
     );
   }

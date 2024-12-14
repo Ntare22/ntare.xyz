@@ -16,7 +16,6 @@ export default function AboutSection({
   description,
   links
 }: any) {
-  console.log(links)
   const resume = links.find((resume: any) => resume.link_name == "resume")
   const linkedIn = links.find((resume: any) => resume.link_name == "linkedin")
   const gitHub = links.find((resume: any) => resume.link_name == "github")

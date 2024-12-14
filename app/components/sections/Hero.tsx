@@ -52,7 +52,7 @@ export default function Hero({
       <div className="py-5 lg:py-0 lg:w-1/2">
         <CldImage 
           className="rounded-xl lg:hidden"
-          src="ntare.xyz/dummy-potrait"
+          src="ntare.xyz/jim-portrait"
           alt="Mobile view"
           width={400}
           height={400}
@@ -60,7 +60,7 @@ export default function Hero({
         />
         <CldImage 
           className="rounded-xl hidden lg:block"
-          src="ntare.xyz/dummy-potrait-4"
+          src="ntare.xyz/jim-black-white"
           alt="Desktop view"
           width={700}
           height={500}

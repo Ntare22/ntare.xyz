@@ -16,8 +16,10 @@ export default function About({
   const more = links.find((link: any) => link.link_name == "more about me")
   return (
     <div className="flex flex-col lg:flex-row">
-      <h1 className={`${bebas.className} text-5xl lg:text-6xl lg:w-1/2`}>{heading}</h1>
-      <div>
+      <div className="w-full">
+        <h1 className={`${bebas.className} text-5xl lg:text-6xl`}>{heading}</h1>
+      </div>
+      <div className="">
         <div className="py-2">
           <span className='font-thin py-2 text-lg lg:text-xl'>{sub_heading}</span>
           <p className='font-thin text-[#C7C7C7] lg:text-xl'>{description}</p>

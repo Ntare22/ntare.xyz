@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import { Bebas_Neue } from "next/font/google";
 import Link from "next/link";
 
@@ -12,7 +14,10 @@ export default function About({
   description,
   links
 }: any) {
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   const more = links.find((link: any) => link.link_name == "more about me")
   return (
     <div className="flex flex-col lg:flex-row">

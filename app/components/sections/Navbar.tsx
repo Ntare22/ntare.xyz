@@ -20,8 +20,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
-      <div className="flex w-full justify-between items-center px-5 py-4 lg:px-24 lg:py-5">
+    <div className="top-0 sticky">
+      <div className="flex w-full bg-black justify-between items-center px-5 py-4 lg:px-24 lg:py-5">
         <Link href="/" className={`${bebas.className} text-3xl`}>Jim Ntare</Link>
         {/* Hamburger Button */}
         <div
@@ -57,7 +57,7 @@ export default function Navbar() {
                 justify-evenly 
                 justify-center 
                 bg-black 
-                h-2/3`}>
+                h-screen`}>
               <Link href="/#projects" className="py-2" onClick={() => setIsOpen(false)}>Work</Link>
               <Link href="/about" className="py-2" onClick={() => setIsOpen(false)}>About</Link>
               <Link href="/#contact" className="py-2" onClick={() => setIsOpen(false)}>Contact</Link>

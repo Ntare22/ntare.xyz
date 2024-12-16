@@ -35,7 +35,6 @@ export const GET_HOMEPAGE = gql`
             title
             description
             year
-            role
             link {
               id
               link_name
@@ -49,6 +48,18 @@ export const GET_HOMEPAGE = gql`
             }
           }
         }
+        ... on ComponentExperienceCompanies {
+          id
+          experience {
+            id
+            company
+            role
+            start_date
+            description
+            end_date
+          }
+          section_name
+        }
       }
     }
   }
@@ -56,38 +67,62 @@ export const GET_HOMEPAGE = gql`
 
 export const GET_ABOUTPAGE = gql`
   query About {
-    about {
-      content {
-        ... on ComponentSectionsSection {
+  about {
+    content {
+      ... on ComponentSectionsSection {
+        id
+        section_name
+        heading
+        sub_heading
+        description
+        image
+        links {
+          link_name
           id
-          section_name
-          heading
-          sub_heading
+          url
+        }
+        skills {
+          tag_name
+          id
+        }
+      }
+      ... on ComponentExperienceCompanies {
+        id
+        section_name
+        experience {
+          id
+          company
+          role
           description
-          image
-          links {
-            link_name
+          start_date
+          end_date
+        }
+      }
+      ... on ComponentProjectProjectsContainer {
+        id
+        title
+        description
+        projects {
+          id
+          project_name
+          title
+          description
+          year
+          link {
             id
+            link_name
             url
           }
-          skills {
+          client
+          image
+          tag {
+            id
             tag_name
-            id
           }
-        }
-        ... on ComponentExperienceCompanies {
-          id
-          section_name
-          experience {
-            id
-            company
-            role
-            description
-            start_date
-            end_date
-          }
+          role
         }
       }
     }
+  }
 }
 `;

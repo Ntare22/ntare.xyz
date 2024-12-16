@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <div className="top-0 sticky">
       <div className="flex w-full bg-black justify-between items-center px-5 py-4 lg:px-24 lg:py-5">
-        <Link href="/" className={`${bebas.className} text-3xl`}>Jim Ntare</Link>
+        <Link href="/" onClick={() => setIsOpen(false)} className={`${bebas.className} text-3xl`}>Jim Ntare</Link>
         {/* Hamburger Button */}
         <div
           className="absolute right-4 top-3 lg:hidden "
@@ -58,7 +58,7 @@ export default function Navbar() {
                 justify-center 
                 bg-black 
                 h-screen`}>
-              <Link href="/#projects" className="py-2" onClick={() => setIsOpen(false)}>Work</Link>
+              <Link href="/" className="py-2" onClick={() => setIsOpen(false)}>Home</Link>
               <Link href="/about" className="py-2" onClick={() => setIsOpen(false)}>About</Link>
               <Link href="/#contact" className="py-2" onClick={() => setIsOpen(false)}>Contact</Link>
             </div>

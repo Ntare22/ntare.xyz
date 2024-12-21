@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 import Navbar from "./components/sections/Navbar";
 import ApolloProviderWrapper from "./lib/apolloClient";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
         <ApolloProviderWrapper>
           <Navbar />
           {children}
+          <Analytics />
         </ApolloProviderWrapper>
       </body>
     </html>
